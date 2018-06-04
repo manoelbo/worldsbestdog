@@ -1,10 +1,57 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Input, Col, Row, Upload, Icon } from 'antd';
+import { Input, Col, Row, Upload, Icon, message } from 'antd';
+import firebase from "@firebase/app";
+import "@firebase/storage";
+import ImageCompressor from 'image-compressor.js';
 import { updateDog } from '../../actions/DonationActions';
 const Dragger = Upload.Dragger;
 
+
 class StepInfo extends Component {
+
+    DraggerOnChange(info) {
+        console.log('INFO',info)
+        const status = info.file.status;
+          if (status !== 'uploading') {
+            console.log(info.file, info.fileList);
+          }
+          if (status === 'done') {
+            message.success(`${info.file.name} file uploaded successfully.`);
+            this.props.updateDog({ prop: 'photoUrl', value: info.file.response });
+          } else if (status === 'error') {
+            message.error(`${info.file.name} file upload failed.`);
+          }
+    }
+
+    customRequest({ onSuccess, onError, file }) {
+        console.log(file)
+        const imgRef = firebase.storage().ref(`/images/`).child(`${file.name}_${file.size}`);
+        new ImageCompressor(file, {
+            quality: .8,
+            maxWidth: 800,
+            success(result) {
+                imgRef.put(result)
+                    .then((snapshot) => {
+                        snapshot.ref.getDownloadURL().then((downloadURL) => {
+                            onSuccess(downloadURL, file);
+                        }).catch(() => {
+                            onError(null, file);
+                        });
+
+                    })
+                    .catch((err) => {
+                        console.log('ERROR', err);
+                        message.error(err);
+                        onError(null, file);
+
+                    })
+            }
+
+        })
+
+    }
+
     render() {
         const {
             name,
@@ -89,6 +136,9 @@ class StepInfo extends Component {
                         <Dragger
                             name="file"
                             multiple={false}
+                            onChange={this.DraggerOnChange.bind(this)}
+                            customRequest={this.customRequest}
+                            accept="image/JPG"
                         >
                             <p className="ant-upload-drag-icon">
                                 <Icon type="inbox" />

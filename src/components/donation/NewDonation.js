@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Row, Col, Card } from 'antd';
+import { Row, Col } from 'antd';
 import CreateDonation from './CreateDonation';
+import DogWall from '../dog/DogWall';
 
 class NewDonation extends Component {
     render() {
@@ -13,7 +14,7 @@ class NewDonation extends Component {
                 <Col span={14}>
                     <Row type="flex" justify="center">
                         <Col span={22}>
-                            <Card />
+                            <DogWall />
                         </Col>
                     </Row>
                 </Col>
