@@ -5,6 +5,8 @@ import DefaultDogPic from '../../assets/img/defautDogPic.png';
 import Sound from 'react-sound';
 
 class DogWall extends Component {
+
+
     render() {
         const {
             name,
@@ -18,7 +20,6 @@ class DogWall extends Component {
             border,
             backgroundColor,
             backgroundMusic,
-            stickers,
             thanks
         } = this.props.custom
 
@@ -27,7 +28,7 @@ class DogWall extends Component {
         const dogAge = age || '{age}';
         const dogAchivement = achievement || '{achievement}';
         const dogPic = photoUrl || DefaultDogPic;
-        const mp3 = 'bensound-ukulele.mp3';
+        const dogThanks = thanks !== 'none' ? `Thanks to ${dogName} ${thanks}.` : '';
 
         return (
             <div className={`dogWall ${backgroundColor}`}>
@@ -50,8 +51,9 @@ class DogWall extends Component {
                     <Col span={24}>
                         <p>
                             {
-                                `${dogName} is a ${dogAge} years old ${dogBreed}. His biggest achiviment was ${dogAchivement}.`
+                                `${dogName} is a ${dogAge} years old ${dogBreed}. His biggest achiviment was ${dogAchivement}. ${dogThanks}`
                             }
+
                         </p>
 
                     </Col>

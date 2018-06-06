@@ -7,8 +7,8 @@ const Step = Steps.Step;
 const steps = [
     {
         title: 'Info',
-        content: <StepInfo/>
-        //content: <StepCustomize/>
+        //content: <StepInfo/>
+        content: <StepCustomize/>
     },
     {
         title: 'Custom',

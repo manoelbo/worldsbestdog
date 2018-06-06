@@ -5,6 +5,13 @@ import { updateCustom } from '../../actions/DonationActions';
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
+const foodWaste = 'world food waste declines'
+const fartArt = 'fart became an art'
+const cool = 'our neighborhood is cooler'
+const lazzy = 'laziness became an inspiration'
+const bodyguard = 'our family does not need bodyguards anymore.'
+
+
 class StepCustomize extends Component {
     onChange(e) {
         console.log(`radio checked:${e.target.value}`);
@@ -66,15 +73,16 @@ class StepCustomize extends Component {
                 </Row>
 
                 <Row type={'flex'} justify="center">
-                    <Divider>stickers</Divider>
+                    <Divider>background animation</Divider>
                     <RadioGroup
                         onChange={event => this.props.updateCustom({ prop: 'stickers', value: event.target.value })}
                         defaultValue={stickers}
                     >
-                        <RadioButton value="a">Snow</RadioButton>
-                        <RadioButton value="b">Heart</RadioButton>
-                        <RadioButton value="c">Kiss</RadioButton>
-                        <RadioButton value="d">ET</RadioButton>
+                        <RadioButton value="bg-poop">Poop</RadioButton>
+                        <RadioButton value="bg-pillow">Pillow</RadioButton>
+                        <RadioButton value="bg-dog">Happy Dog</RadioButton>
+                        <RadioButton value="bg-heart">Heart</RadioButton>
+                        <RadioButton value="bg-bone">Bone</RadioButton>
                         <RadioButton value="none">None</RadioButton>
                     </RadioGroup>
                 </Row>
@@ -85,11 +93,11 @@ class StepCustomize extends Component {
                         onChange={event => this.props.updateCustom({ prop: 'thanks', value: event.target.value })}
                         defaultValue={thanks}
                     >
-                        <RadioButton value="a">Snow</RadioButton>
-                        <RadioButton value="b">Heart</RadioButton>
-                        <RadioButton value="c">Kiss</RadioButton>
-                        <RadioButton value="d">ET</RadioButton>
-                        <RadioButton value="d">Candy</RadioButton>
+                        <RadioButton value={foodWaste}>Food Waste</RadioButton>
+                        <RadioButton value={fartArt}>Fart Art</RadioButton>
+                        <RadioButton value={cool}>Cool</RadioButton>
+                        <RadioButton value={lazzy}>Lazzy</RadioButton>
+                        <RadioButton value={bodyguard}>Bodyguard</RadioButton>
                         <RadioButton value="none">None</RadioButton>
                     </RadioGroup>
                 </Row>

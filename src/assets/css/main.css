@@ -17,20 +17,23 @@ body, html, #root {
 body {
     /* background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%); */
     /* background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%); */
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
     /* background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); */
     /* background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%); */
     /* background-image: linear-gradient(to top, #c79081 0%, #dfa579 100%); */
+    background-color: #F9FAFB;
 
 }
 
-.App {
-
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
 }
 
-.Content {
-
+.App, .Content  {
+    height: 100%;
 }
+
 
 
 
@@ -42,11 +45,44 @@ body {
 }
 
 .newDonation.bg-poop {
-    background: gray url(https://subtlepatterns.com/patterns/geometry2.png) repeat 0 0;
+    background: #F9FAFB url(../img/bg-poop.png) repeat 0 0;
     width: 100%;
     margin: 0;
     height: 100%;
-    padding-top: 120px;
+    box-sizing: border-box;
+    -webkit-animation: slide 20s linear infinite;
+}
+
+.newDonation.bg-bone {
+    background: #F9FAFB url(../img/bg-bone.png) repeat 0 0;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-animation: slide 20s linear infinite;
+}
+.newDonation.bg-dog {
+    background: #F9FAFB url(../img/bg-dog.png) repeat 0 0;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-animation: slide 20s linear infinite;
+}
+.newDonation.bg-heart {
+    background: #F9FAFB url(../img/bg-heart.png) repeat 0 0;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-animation: slide 20s linear infinite;
+}
+
+.newDonation.bg-pillow {
+    background: #F9FAFB url(../img/bg-pillow.png) repeat 0 0;
+    width: 100%;
+    margin: 0;
+    height: 100%;
     box-sizing: border-box;
     -webkit-animation: slide 20s linear infinite;
 }
