@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Card, Divider, Radio, Row } from 'antd';
+import { connect } from 'react-redux';
+import { Divider, Radio, Row } from 'antd';
+import { updateCustom } from '../../actions/DonationActions';
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
@@ -8,36 +10,87 @@ class StepCustomize extends Component {
         console.log(`radio checked:${e.target.value}`);
     }
     render() {
+        const {
+            border,
+            backgroundColor,
+            backgroundMusic,
+            stickers,
+            thanks
+        }  = this.props.custom;
+
         return (
             <div>
+                <Row type={'flex'} justify="center">
+                    <Divider>border</Divider>
+                    <RadioGroup
+                        onChange={event => this.props.updateCustom({ prop: 'border', value: event.target.value })}
+                        defaultValue={border}
+                    >
+                        <RadioButton value="border-black">Black</RadioButton>
+                        <RadioButton value="border-wood">Wood</RadioButton>
+                        <RadioButton value="border-pink">Hot Pink</RadioButton>
+                        <RadioButton value="border-silver">Silver</RadioButton>
+                        <RadioButton value="border-gold">Gold</RadioButton>
+                        <RadioButton value="none">None</RadioButton>
+                    </RadioGroup>
+                </Row>
 
-                <Divider>music</Divider>
+
                 <Row type={'flex'} justify="center">
-                    <RadioGroup onChange={this.onChange} defaultValue="a">
-                        <RadioButton value="a">Angel</RadioButton>
-                        <RadioButton value="b">Godness</RadioButton>
-                        <RadioButton value="c">Funcky</RadioButton>
-                        <RadioButton value="d">80s</RadioButton>
+                    <Divider>music</Divider>
+                    <RadioGroup
+                        onChange={event => this.props.updateCustom({ prop: 'backgroundMusic', value: event.target.value })}
+                        defaultValue={backgroundMusic}
+                    >
+                        <RadioButton value="bensound-ukulele.mp3">Happy Folk</RadioButton>
+                        <RadioButton value="America_the_Beautiful.mp3">Classic</RadioButton>
+                        <RadioButton value="When_Johnny_Comes_Marching_Home.mp3">Army</RadioButton>
+                        <RadioButton value="Honey_Bee.mp3">Funky</RadioButton>
+                        <RadioButton value="none">None</RadioButton>
                     </RadioGroup>
                 </Row>
-                <Divider>background color</Divider>
+
                 <Row type={'flex'} justify="center">
-                    <RadioGroup onChange={this.onChange} defaultValue="a">
-                        <RadioButton value="a">Pink</RadioButton>
-                        <RadioButton value="b">Green</RadioButton>
-                        <RadioButton value="c">Blue</RadioButton>
-                        <RadioButton value="d">Purple</RadioButton>
+                    <Divider>background color</Divider>
+                    <RadioGroup
+                        onChange={event => this.props.updateCustom({ prop: 'backgroundColor', value: event.target.value })}
+                        defaultValue={backgroundColor}
+                    >
+                        <RadioButton value="bg-pink">Pink</RadioButton>
+                        <RadioButton value="bg-retro-wave">Retro Wave</RadioButton>
+                        <RadioButton value="bg-blue">Blue</RadioButton>
+                        <RadioButton value="bg-gold">Gold</RadioButton>
+                        <RadioButton value="bg-silver">Silver</RadioButton>
+                        <RadioButton value="none">None</RadioButton>
                     </RadioGroup>
                 </Row>
-                <Divider>background animation</Divider>
+
                 <Row type={'flex'} justify="center">
-                    <RadioGroup onChange={this.onChange} defaultValue="a">
+                    <Divider>stickers</Divider>
+                    <RadioGroup
+                        onChange={event => this.props.updateCustom({ prop: 'stickers', value: event.target.value })}
+                        defaultValue={stickers}
+                    >
+                        <RadioButton value="a">Snow</RadioButton>
+                        <RadioButton value="b">Heart</RadioButton>
+                        <RadioButton value="c">Kiss</RadioButton>
+                        <RadioButton value="d">ET</RadioButton>
+                        <RadioButton value="none">None</RadioButton>
+                    </RadioGroup>
+                </Row>
+
+                <Row type={'flex'} justify="center">
+                    <Divider>thanks</Divider>
+                    <RadioGroup
+                        onChange={event => this.props.updateCustom({ prop: 'thanks', value: event.target.value })}
+                        defaultValue={thanks}
+                    >
                         <RadioButton value="a">Snow</RadioButton>
                         <RadioButton value="b">Heart</RadioButton>
                         <RadioButton value="c">Kiss</RadioButton>
                         <RadioButton value="d">ET</RadioButton>
                         <RadioButton value="d">Candy</RadioButton>
-                        <RadioButton value="d">Puppy</RadioButton>
+                        <RadioButton value="none">None</RadioButton>
                     </RadioGroup>
                 </Row>
 
@@ -46,4 +99,9 @@ class StepCustomize extends Component {
     }
 }
 
-export default StepCustomize;
+const mapStateToProps = (state) => {
+    const custom  = state.newDonation.custom;
+    return { custom };
+}
+
+export default connect(mapStateToProps, {updateCustom})(StepCustomize);

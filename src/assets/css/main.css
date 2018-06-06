@@ -1,3 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Gaegu:700');
+
+
+*, *:before, *:after
+{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body, html, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body {
+    /* background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%); */
+    /* background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%); */
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); */
+    /* background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%); */
+    /* background-image: linear-gradient(to top, #c79081 0%, #dfa579 100%); */
+
+}
+
+.App {
+
+}
+
+.Content {
+
+}
+
+
+
+
+/* CREATE DONATION */
+
+.newDonation {
+    padding-top: 30px;
+}
+
+.newDonation.bg-poop {
+    background: gray url(https://subtlepatterns.com/patterns/geometry2.png) repeat 0 0;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    padding-top: 120px;
+    box-sizing: border-box;
+    -webkit-animation: slide 20s linear infinite;
+}
+
+.steps-content {
+    min-height: 440px;
+    padding: 20px 0 30px 0;
+}
+
 .AsideLabel {
     float: right;
     margin-right: 16px;
@@ -7,10 +65,151 @@
 }
 
 .HeaderRow {
-    margin: 20px 0 20px 0;
+    /* margin: 20px 0 20px 0; */
     text-align: center;
 }
 
 .InputRow {
-    margin: 20px 0;
+    margin-top: 20px;
+}
+
+
+/* DOG WALL */
+
+.dogWall {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 6px 4px 10px 0 rgba(0,0,0,0.50);
+    min-height: 574px;
+
+}
+
+.dogWall.bg-pink {
+    background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+}
+
+
+.dogWall.bg-retro-wave {
+    background-image: linear-gradient(to top, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%, #7046aa 71%, #0c1db8 87%, #020f75 100%);}
+
+.dogWall.bg-blue {
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
+.dogWall.bg-gold {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+
+.dogWall.bg-silver {
+    background:
+       -moz-linear-gradient(
+       -72deg,
+       #dedede,
+       #ffffff 16%,
+       #dedede 21%,
+       #ffffff 24%,
+       #454545 27%,
+       #dedede 36%,
+       #ffffff 45%,
+       #ffffff 60%,
+       #dedede 72%,
+       #ffffff 80%,
+       #dedede 84%,
+       #a1a1a1
+     );
+     background:
+     -webkit-linear-gradient(
+       -72deg,
+       #dedede,
+       #ffffff 16%,
+       #dedede 21%,
+       #ffffff 24%,
+       #454545 27%,
+       #dedede 36%,
+       #ffffff 45%,
+       #ffffff 60%,
+       #dedede 72%,
+       #ffffff 80%,
+       #dedede 84%,
+       #a1a1a1
+     );
+     background:
+     -o-linear-gradient(
+       -72deg,
+       #dedede,
+       #ffffff 16%,
+       #dedede 21%,
+       #ffffff 24%,
+       #454545 27%,
+       #dedede 36%,
+       #ffffff 45%,
+       #ffffff 60%,
+       #dedede 72%,
+       #ffffff 80%,
+       #dedede 84%,
+       #a1a1a1
+     );
+     background:
+     linear-gradient(
+       -72deg,
+       #dedede,
+       #ffffff 16%,
+       #dedede 21%,
+       #ffffff 24%,
+       #454545 27%,
+       #dedede 36%,
+       #ffffff 45%,
+       #ffffff 60%,
+       #dedede 72%,
+       #ffffff 80%,
+       #dedede 84%,
+       #a1a1a1
+     );
+}
+
+
+.dogWall .dogPic {
+    max-height: 280px;
+    margin-top: 30px;
+}
+
+.dogWall .dogPic.border-wood {
+    border: 12px solid;
+    border-image: repeating-linear-gradient(30deg, #69482B, #8B572A, #69482B 20px) 60;
+}
+
+.dogWall .dogPic.border-black {
+    border: 12px solid black;
+}
+
+.dogWall .dogPic.border-pink {
+    border: 12px solid #E815BF;
+}
+
+.dogWall .dogPic.border-silver {
+    border-style: solid;
+    border-width: 30px 30px 30px;
+    -moz-border-image: url(../img/silver-border.svg) 45 48 41 repeat;
+    -webkit-border-image: url(../img/silver-border.svg) 45 48 41 repeat;
+    -o-border-image: url(../img/silver-border.svg) 45 48 41 repeat;
+    border-image: url(../img/silver-border.svg) 45 48 41 repeat;
+}
+
+.dogWall .dogPic.border-gold {
+    border-style: solid;
+    border-width: 34px 31px 28px 26px;
+    -moz-border-image: url(../img/gold-border.png) 93 100 98 101 repeat;
+    -webkit-border-image: url(../img/gold-border.png) 93 100 98 101 repeat;
+    -o-border-image: url(../img/gold-border.png) 93 100 98 101 repeat;
+    border-image: url(../img/gold-border.png) 93 100 98 101 repeat;
+}
+
+
+
+.dogWall p {
+    font-family: 'Gaegu', cursive;
+    font-size: 32px;
+    margin: 20px 10%;
 }

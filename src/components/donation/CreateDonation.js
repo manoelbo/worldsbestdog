@@ -8,6 +8,7 @@ const steps = [
     {
         title: 'Info',
         content: <StepInfo/>
+        //content: <StepCustomize/>
     },
     {
         title: 'Custom',

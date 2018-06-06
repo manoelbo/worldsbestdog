@@ -7,7 +7,7 @@ import NewDonation from './donation/NewDonation';
 class Router extends Component {
     render() {
         return (
-            <div>
+            <div className="Content">
                 <Route exact path="/" component={Home} />
                 <Route exact path="/donate" component={NewDonation} />
             </div>

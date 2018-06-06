@@ -6,19 +6,22 @@ import DogWall from '../dog/DogWall';
 class NewDonation extends Component {
     render() {
         return (
-            <Row type="flex" justify="space-between">
-                <Col xs={24} sm={10}>
-                    <CreateDonation />
-                </Col>
+            <section className="newDonation">
+                <Row type="flex" justify="space-around" className="flexbox-item-grow">
+                    <Col xs={24} md={12} lg={10}>
+                        <CreateDonation />
+                    </Col>
 
-                <Col span={14}>
-                    <Row type="flex" justify="center">
-                        <Col span={22}>
-                            <DogWall />
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
+                    <Col xs={24} md={12} lg={10}>
+                        <Row type="flex" justify="center">
+                            <Col span={22}>
+                                <DogWall />
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+            </section>
+
         );
     }
 }

@@ -81,6 +81,20 @@ class StepInfo extends Component {
                     </Col>
                 </Row>
 
+                <Row className="InputRow">
+                    <Col span={6} >
+                        <p className="AsideLabel">Age: </p>
+                    </Col>
+
+                    <Col span={16}>
+                        <Input
+                            type="number"
+                            placeholder="In Dog Years or Human Years"
+                            value={age}
+                            onChange={event => this.props.updateDog({ prop: 'age', value: event.target.value })}
+                        />
+                    </Col>
+                </Row>
 
                 <Row className="InputRow">
                     <Col span={6} >
@@ -93,21 +107,6 @@ class StepInfo extends Component {
                             placeholder="Or What Else Your Dag Is"
                             value={breed}
                             onChange={event => this.props.updateDog({ prop: 'breed', value: event.target.value })}
-                        />
-                    </Col>
-                </Row>
-
-                <Row className="InputRow">
-                    <Col span={6} >
-                        <p className="AsideLabel">Age: </p>
-                    </Col>
-
-                    <Col span={16}>
-                        <Input
-                            type="number"
-                            placeholder="In Dog Years or Human Years"
-                            value={age}
-                            onChange={event => this.props.updateDog({ prop: 'age', value: event.target.value })}
                         />
                     </Col>
                 </Row>
